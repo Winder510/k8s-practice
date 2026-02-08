@@ -1,6 +1,8 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  labels:
+    app: car-serv
   name: car-serv-deployment
   namespace: car-serv
 spec:
@@ -8,7 +10,7 @@ spec:
   revisionHistoryLimit: 11
   selector:
     matchLabels:
-      app: car-serv-deployment
+      app: car-serv
   strategy:
     rollingUpdate:
       maxSurge: 1
@@ -17,7 +19,7 @@ spec:
   template:
     metadata:
       labels:
-        app: car-serv-deployment
+        app: car-serv
       namespace: car-serv
     spec:
       containers:
