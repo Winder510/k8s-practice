@@ -11,12 +11,8 @@ spec:
         paths:
           - backend:
               service:
-                name: car-serv1-service
+                name: car-serv-service
                 port:
                   number: 80
             path: /
             pathType: Prefix
-status:
-  loadBalancer:
-    ingress:
-      - ip: 10.109.253.163
